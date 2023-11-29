@@ -1,0 +1,18 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-9">
+      <input
+        #toDoInput
+        [(ngModel)]="toDoValue"
+        type="text"
+        placeholder="Enter Task"
+        class="form-control"
+      />
+    </div>
+    <div class="col-3">
+      <button (click)="addTask(toDoInput)" class="btn btn-primary w-100">
+        Add Task
+      </button>
+    </div>
+  </div>
+</div>

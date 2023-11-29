@@ -1,0 +1,33 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-9">
+      <input
+        [(ngModel)]="inputValue"
+        type="text"
+        placeholder="Enter Email"
+        class="form-control"
+      />
+    </div>
+    <div class="col-3">
+      <button
+        *ngIf="SearchIsVisible"
+        (click)="searchForUser()"
+        class="btn btn-primary w-100"
+      >
+        Search
+      </button>
+      <button
+        *ngIf="resetIsVisible"
+        (click)="reset()"
+        class="btn btn-primary w-100"
+      >
+        reset
+      </button>
+    </div>
+  </div>
+  <div class="row g-3 my-4">
+    <div *ngFor="let user of usersList" class="col-sm-12 col-md-6 col-lg-4">
+      <app-card [user]="user"></app-card>
+    </div>
+  </div>
+</div>

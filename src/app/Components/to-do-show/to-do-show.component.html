@@ -1,0 +1,22 @@
+<div class="container">
+  <div
+    *ngFor="let toDo of dataFromParentArr; let i = index"
+    class="row bg-dark py-3 text-light rounded mb-2"
+  >
+    <div
+      [ngStyle]="{
+    'text-decoration': toDo.completed ? 'line-through' : '',
+    opacity: toDo.completed ? 0.3 : 1,
+  }"
+      class="col-9 text-center fs-4"
+    >
+      {{ toDo.data }}
+    </div>
+    <div class="col-3">
+      <button (click)="removeToDo(i)" class="btn btn-danger w-50 me-3">
+        Delete Task
+      </button>
+      <button (click)="styleToDo(i)" class="btn btn-warning">Completed</button>
+    </div>
+  </div>
+</div>
